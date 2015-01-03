@@ -17,6 +17,9 @@ function init () {
       console.log(event['results'][0][0]['transcript']);
       console.log(event['results'][0][0]['confidence']);
       console.log(event['results'][0]['isFinal']);
+      if (event['results'][0]['isFinal'] == true) {
+          ws.send(event['results'][0][0]['transcript']);
+      }
     }
     recognition.start();
 }
